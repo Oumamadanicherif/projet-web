@@ -22,10 +22,10 @@ router.get('/:id', async(req, res) => {
             },
         })
         // cas n'existe pas qu BD
-    if (commentaire == null) {
+    if (commentaires == null) {
         res.status(404).json("Commentaire not found");
     } else {
-        res.json(commentaire)
+        res.json(commentaires)
     }
 
 });

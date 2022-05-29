@@ -1,0 +1,23 @@
+Get http://localhost:3000/users
+
+Get http://localhost:3000/users?skip=3&takken=4
+Get http://localhost:3000/users/1
+
+DELETE http://localhost:3000/users/3
+POST http://localhost:3000/users
+Content-Type: application/json 
+{
+    "name":"oumaima madani cherif",
+    "email": "oumaimamc@gmail.com",
+    "password":"btsenset",
+    "role":"ADMIN"
+}
+
+PATCH http://localhost:3000/users
+
+Content-Type:
+ {
+"id":2,
+ "name":"Salim Kardoud"
+
+}

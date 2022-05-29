@@ -1,0 +1,20 @@
+Get http://localhost:3000/categories
+
+Get http://localhost:3000/categories?skip=4&taken=9
+Get http://localhost:3000/categories/1
+
+DELETE http://localhost:3000/categories/4
+POST http://localhost:3000/categories
+Content-Type: application/json 
+{
+    "id":9, 
+  "name":"Informatique et nouvelles Technlogies IT"
+}
+
+PATCH http://localhost:3000/categories
+
+Content-Type:
+ {
+"id":2,
+ "nom":"Culture & Sport"
+}

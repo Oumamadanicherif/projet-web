@@ -22,17 +22,17 @@ router.get('/:id', async(req, res) => {
             },
         })
         // cas l'article n'existe pas qu BD
-    if (user == null) {
+    if (users == null) {
         res.status(404).json("user not found");
     } else {
-        res.json(user)
+        res.json(users)
     }
 
 });
 
 router.patch('/', async(req, res) => {
     const { idUser, idArticle } = req.body;
-    const article = await prisma.user.findUnique({
+    const user = await prisma.user.findUnique({
         where: { id: Number(idUser) }, // autre explicqtion en language SQL select
     })
 

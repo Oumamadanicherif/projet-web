@@ -1,0 +1,22 @@
+Get http://localhost:3000/articles
+
+Get http://localhost:3000/articles?skip=6&taken=3
+Get http://localhost:3000/articles/3
+
+DELETE http://localhost:3000/articles/2
+POST http://localhost:3000/articles
+Content-Type: application/json 
+{
+    "titre": "Journée biodiversité en Maroc",
+    "contenu":  "Alors que plus personne aujourd'hui ne songe à remettre en cause l'importance de la diversité biologique pour le présent et pour les générations futures, certaines activités humaines continuent pourtant à réduire le nombre d’espèces vivantes : agriculture intensive et épandages massifs de produits phytosanitaires, pêche intensive et élevage industriel, chasse d'éspèces protégées, déforestation, etc...S'engager pour défendre la biodiversité Entrée en vigueur en 1993, la Convention sur la diversité biologique (CBD) a été ratifiée jusqu’à présent par 196 états. Cette convention internationale vise à défendre la diversité biologique, l’utilisation durable des ressources naturelles et la protection des ressources génétiques. Nous serions incomplets si nous omettions l'absolue nécessité d'un partage juste et équitable des avantages permis par le maintien de la biodiversité.Étant donné l’importance de l’éducation du public et de la sensibilisation à la mise en œuvre de la Convention à tous les niveaux, l'Assemblée générale des Nations Unies a choisi la date du 22 mai, anniversaire de l’adoption de la convention, comme Journée internationale de la diversité biologique. [résolution 55/201 du 20 décembre 2000].",
+     "published":"true"
+
+}
+
+PATCH http://localhost:3000/articles
+
+Content-Type:
+ {
+"id":9,
+ "titre":"Journée biodiversité en Maroc"
+}

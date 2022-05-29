@@ -31,7 +31,7 @@ router.get('/:id', async(req, res) => {
 });
 
 router.patch('/', async(req, res) => {
-    const { idCategorie, titre, contenu, imageUrl, idUser } = req.body;
+    const { idCategorie, idUser } = req.body;
     const categorie = await prisma.categorie.findUnique({
         where: { id: Number(idCategorie) }, // autre explication en language SQL select * from categories where id=1 //
     })
@@ -49,12 +49,12 @@ router.patch('/', async(req, res) => {
                 utilisateur: { connect: { id: idUser || article.auteur } },
             },
         })
-        res.json(updatedArticle)
+        res.json(updatedCategorie)
     }
 
 });
 router.post('/', async(req, res) => {
-    const { titre, contenu, imageUrl, id } = req.body
+    const { name, id } = req.body
     const result = await prisma.categorie.create({
         data: {
             name,
