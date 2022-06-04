@@ -1,17 +1,6 @@
 const express = require('express');
 var router = express.Router();
 const jwt = require('jsonwebtoken');
-// const users = [
-//     {
-//         username: 'john',
-//         password: 'password123admin',
-//         role: 'admin'
-//     }, {
-//         username: 'anna',
-//         password: 'password123member',
-//         role: 'member'
-//     }
-// ];
 const accessTokenSecret = 'madanicherif';
 
 router.post('/', (req, res) => {

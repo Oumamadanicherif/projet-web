@@ -46,7 +46,7 @@ router.patch('/', async(req, res) => {
             where: { id: Number(idCategorie) || undefined },
             data: {
                 name: this.name,
-                utilisateur: { connect: { id: idUser || article.auteur } },
+                article: { connect: { id: idArticle } },
             },
         })
         res.json(updatedCategorie)
@@ -58,7 +58,7 @@ router.post('/', async(req, res) => {
     const result = await prisma.categorie.create({
         data: {
             name,
-            utilisateur: { connect: { id: id } },
+            article: { connect: { id: id } },
         },
     })
     res.json(result)

@@ -48,7 +48,6 @@ router.patch('/', async(req, res) => {
                 nom: nom,
                 password: password,
                 email: email,
-                utilisateur: { connect: { id: idUser || article.auteur } },
             },
         })
         res.json(updatedUser)
@@ -62,7 +61,6 @@ router.post('/', async(req, res) => {
             email,
             nom,
             password,
-            utilisateur: { connect: { id: id } },
         },
     })
     res.json(result)

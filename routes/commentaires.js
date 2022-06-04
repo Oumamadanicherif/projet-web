@@ -47,7 +47,7 @@ router.patch('/', async(req, res) => {
             data: {
                 email: email,
                 contenu: contenu,
-                utilisateur: { connect: { id: idUser || article.auteur } },
+                article: { connect: { id: idArticle } },
             },
         })
         res.json(updatedCommentaire)
@@ -60,7 +60,7 @@ router.post('/', async(req, res) => {
         data: {
             email,
             contenu,
-            utilisateur: { connect: { id: id } },
+            article: { connect: { id: id } },
         },
     })
     res.json(result)
