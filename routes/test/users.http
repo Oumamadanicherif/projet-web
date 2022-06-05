@@ -1,9 +1,11 @@
 Get http://localhost:3000/users
-
-Get http://localhost:3000/users?skip=3&takken=4
+###
+Get http://localhost:3000/users?take=4&skip=3
+###
 Get http://localhost:3000/users/1
-
+###
 DELETE http://localhost:3000/users/3
+###
 POST http://localhost:3000/users
 Content-Type: application/json 
 {
@@ -12,7 +14,7 @@ Content-Type: application/json
     "password":"btsenset",
     "role":"ADMIN"
 }
-
+###
 PATCH http://localhost:3000/users
 
 Content-Type:

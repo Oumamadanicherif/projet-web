@@ -1,17 +1,19 @@
 Get http://localhost:3000/commentaires
-
-Get http://localhost:3000/commentaires?skip=2&takken=3
+###
+Get http://localhost:3000/commentaires?take=3&skip=2
+###
 Get http://localhost:3000/commentaires/4
-
+###
 DELETE http://localhost:3000/commentaires/3
-POST http://localhost:3000/ucommentaires
+###
+POST http://localhost:3000/commentaires
 
 Content-Type: application/json 
 {
     "email":"arsenal_gunner2@gmail.com",
     "contenu": "Cela commence par « As far back as I can remember I’ve always wanted to be a gangster. » (« Aussi loin que je m’en souvienne j’ai toujours voulu être un gangster »). Cela se termine par « Today everything is different. There is no action. I have to wait around like everyone else. I can’t even get decent food. Right after I got here, I ordered some spaghetti with marinara and I got egg noodles and ketchup. I’m an average nobody. I get to live the rest of my life like a schnook. » (« Aujourd’hui, tout a changé. Il ne se passe plus rien. Je dois faire la queue comme tout le monde. Je ne peux même pas avoir accès à de la nourriture correcte. Peu de temps après être arrivé ici, j’ai commandé des spaghettis à la marinara et j’ai eu des nouilles aux œufs avec du ketchup. Je suis un anonyme ordinaire. Je vais passer le reste de ma vie comme un couillon »)."
 }
-
+###
 PATCH http://localhost:3000/commentaires
 
 Content-Type:

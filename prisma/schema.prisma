@@ -30,13 +30,19 @@ model Article  {
   auteur Int
   utilisateur     User       @relation(fields: [auteur], references: [id])
   commentaire Commentaire[]
-  categories Categorie[] @relation(references: [id])
+  categories CategoriesArticles[] 
 }
-
+model CategoriesArticles {
+  article       Article     @relation(fields: [articleId], references: [id])
+  articleId     Int // relation scalar field (used in the `@relation` attribute above)
+  category   Categorie @relation(fields: [categoryId], references: [id])
+  categoryId Int // relation scalar field (used in the `@relation` attribute above)
+  @@id([articleId, categoryId])
+}
 model Categorie {
   id   Int                   @id @default(autoincrement())
   name  String
-  articles Article[] @relation(references: [id])
+   articles CategoriesArticles[]
 }
 
 model Commentaire {

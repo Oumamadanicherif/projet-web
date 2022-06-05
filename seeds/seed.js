@@ -49,7 +49,7 @@ async function main() {
     }))
 
     const categoriesForArticle = Array.from({ length: Math.floor(Math.random() * 4) }).map(() => ({
-        categoryid: Number(faker.random.numeric(1, { bannedDigits: ['0'] }))
+        categoryId: Number(faker.random.numeric(1, { bannedDigits: ['0'] }))
     }))
 
 
@@ -57,7 +57,7 @@ async function main() {
         await prisma.article.create({
 
             data: {
-                titre: faker.commerce.product(),
+                titre: faker.lorem.text(),
                 contenu: faker.lorem.paragraph(),
                 imageUrl: faker.image.business(),
                 utilisateur: {
