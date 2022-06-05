@@ -7,13 +7,13 @@ async function main() {
     const deleteCommentaire = prisma.commentaire.deleteMany()
     const deleteArticles = prisma.article.deleteMany()
     const deleteCategories = prisma.categorie.deleteMany()
-    const deleteUtilisateurs = prisma.utilisateur.deleteMany()
+    const deleteUtilisateurs = prisma.user.deleteMany()
         // The transaction runs synchronously so deleteUsers must run last.
     await prisma.$transaction([deleteCommentaire, deleteArticles, deleteCategories, deleteUtilisateurs])
     let user = null;
 
     for (let index = 1; index <= 10; index++) {
-        user = await prisma.utilisateur.create({
+        user = await prisma.user.create({
             data: {
                 id: index,
                 nom: faker.name.findName(),
@@ -23,7 +23,7 @@ async function main() {
             },
         })
     }
-    await prisma.utilisateur.create({
+    await prisma.user.create({
         data: {
             id: 11,
             nom: faker.name.findName(),
@@ -49,7 +49,7 @@ async function main() {
     }))
 
     const categoriesForArticle = Array.from({ length: Math.floor(Math.random() * 4) }).map(() => ({
-        categoryId: Number(faker.random.numeric(1, { bannedDigits: ['0'] }))
+        categoryid: Number(faker.random.numeric(1, { bannedDigits: ['0'] }))
     }))
 
 
